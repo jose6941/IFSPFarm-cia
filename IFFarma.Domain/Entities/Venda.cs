@@ -8,12 +8,14 @@ namespace IFSPFarmacia.Domain.Entities
         {
 
         }
-        public Venda(int id, DateTime data, string codigo) : base(id)
+        public Venda(int id, DateTime data, Cliente client, Farmaceutico farma) : base(id)
         {
             Data = data;
-            Codigo = codigo;
+            Client = client;
+            Farma = farma;
         }
         public DateTime Data { get; set; }
-        public string? Codigo { get; set; }       
+        public Cliente Client { get; set; }
+        public Farmaceutico Farma { get; set; }
     }
 }
