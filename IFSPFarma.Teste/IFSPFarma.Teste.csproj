@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IFFarma.Domain\IFFarma.Domain.csproj" />
+    <ProjectReference Include="..\IFSPFarma.Repository\IFSPFarma.Repository.csproj" />
+    <ProjectReference Include="..\IFSPFarma.Service\IFSPFarma.Service.csproj" />
   </ItemGroup>
 
 </Project>
