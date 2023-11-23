@@ -2,7 +2,7 @@
 using IFSPFarmacia.Domain.Base;
 using Microsoft.EntityFrameworkCore;
 
-namespace IFSPStore.Repository.Repository
+namespace IFSPFarma.Repository.Repository
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity<int>
     {

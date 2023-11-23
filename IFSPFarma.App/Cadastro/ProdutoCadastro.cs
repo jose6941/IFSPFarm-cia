@@ -1,35 +1,46 @@
 ﻿using IFSPFarma.App;
+using IFSPFarma.App.Models;
 using IFSPFarmacia.Domain.Base;
 using IFSPFarmacia.Domain.Entities;
 using IFSPFarma.Service.Validators;
-using ReaLTaiizor.Controls;
 
 namespace IFSPFarma.App.Cadastro
 {
-    public partial class ClienteCadastro : CadastroBase
+    public partial class ProdutoCadastro : CadastroBase
     {
 
-        private readonly IBaseService<Cliente> _clienteService;
+        private readonly IBaseService<Produto> _produtoService;
+        private readonly IBaseService<Fornecedor> _fornecedorService;
 
-        private List<Cliente>? clientes;
+        private List<Produto>? produtos;
 
-        public ClienteCadastro(IBaseService<Cliente> clienteService)
+        public ProdutoCadastro(IBaseService<Produto> produtoService, IBaseService<Fornecedor> fornecedorService)
         {
-            _clienteService = clienteService;
+            _produtoService = produtoService;
+            _fornecedorService = fornecedorService;
             InitializeComponent();
         }
 
-        private void PreencheObjeto(Cliente cliente)
-        {         
-            cliente.Nome = txtNome.Text;
-            cliente.Senha = txtSenha.Text;
-            cliente.Login = txtLogin.Text;
-            cliente.Email = txtEmail.Text;      
-        }
-
-        public ClienteCadastro()
+        private void PreencheObjeto(Produto produto)
         {
-            InitializeComponent();
+            produto.Nome = txtNome.Text;
+            if (float.TryParse(txtPreco.Text, out var preco))
+            {
+                produto.Preco = preco;
+            }
+
+            if (DateTime.TryParse(txtDataCompra.Text, out var dataCompra))
+            {
+                produto.DataCompra = dataCompra;
+            }
+            produto.UnidadeVenda = txtUnidadeVenda.Text;
+
+            if (int.TryParse(cboGrupo.SelectedValue.ToString(), out var idGrupo))
+            {
+                var grupo = _grupoService.GetById<Grupo>(idGrupo);
+                produto.Grupo = grupo;
+                //_produtoService.AttachObject(grupo);
+            }
         }
 
         protected override void Salvar()
@@ -38,14 +49,14 @@ namespace IFSPFarma.App.Cadastro
             {
                 if (IsAlteracao)
                 {
-                    
+
                     if (int.TryParse(txtId.Text, out var id))
                     {
                         var cliente = _clienteService.GetById<Cliente>(id);
                         PreencheObjeto(cliente);
                         cliente = _clienteService.Update<Cliente, Cliente, ClienteValidator>(cliente);
                     }
-                    
+
                 }
                 else
                 {
@@ -104,5 +115,6 @@ namespace IFSPFarma.App.Cadastro
         {
 
         }
+
     }
 }

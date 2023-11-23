@@ -5,10 +5,10 @@ using IFSPFarma.Service.Services;
 using IFSPFarmacia.Domain.Base;
 using IFSPFarmacia.Domain.Base;
 using IFSPFarmacia.Domain.Entities;
-using IFSPStore.Repository.Repository;
 using IFSPFarma.Service.Validators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using IFSPFarma.Repository.Repository;
 
 namespace IFSPFarma.Teste
 {
