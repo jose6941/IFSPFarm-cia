@@ -1,45 +1,65 @@
 ﻿using IFSPFarma.App;
-using IFSPFarma.App.Models;
 using IFSPFarmacia.Domain.Base;
 using IFSPFarmacia.Domain.Entities;
 using IFSPFarma.Service.Validators;
+using ReaLTaiizor.Controls;
+using IFSPFarma.App.Models;
 
 namespace IFSPFarma.App.Cadastro
 {
     public partial class ProdutoCadastro : CadastroBase
     {
-
         private readonly IBaseService<Produto> _produtoService;
         private readonly IBaseService<Fornecedor> _fornecedorService;
+        private readonly IBaseService<Remedio> _remedioService;
 
-        private List<Produto>? produtos;
-
-        public ProdutoCadastro(IBaseService<Produto> produtoService, IBaseService<Fornecedor> fornecedorService)
+        private List<ProdutoModel>? produtos;
+        public ProdutoCadastro(IBaseService<Produto> produtoService,
+                               IBaseService<Fornecedor> fornecedorService,
+                               IBaseService<Remedio> remedioService)
         {
             _produtoService = produtoService;
             _fornecedorService = fornecedorService;
+            _remedioService = remedioService;
             InitializeComponent();
+        }
+
+        private void CarregarCombo()
+        {
+            cboRemedio.ValueMember = "Id";
+            cboRemedio.DisplayMember = "Nome";
+            cboRemedio.DataSource = _remedioService.Get<Remedio>().ToList();
+
+            cboFornecedor.ValueMember = "Id";
+            cboFornecedor.DisplayMember = "Nome";
+            cboFornecedor.DataSource = _fornecedorService.Get<Fornecedor>().ToList();
+
         }
 
         private void PreencheObjeto(Produto produto)
         {
-            produto.Nome = txtNome.Text;
-            if (float.TryParse(txtPreco.Text, out var preco))
+            if (double.TryParse(txtValoru.Text, out var valoru))
             {
-                produto.Preco = preco;
+                produto.ValorUnitario = valoru;
+            }
+            if (int.TryParse(txtQnt.Text, out var qnt))
+            {
+                produto.Quantidade = qnt;
+            }
+            if (double.TryParse(txtValort.Text, out var valort))
+            {
+                produto.ValorTotal = valort;
             }
 
-            if (DateTime.TryParse(txtDataCompra.Text, out var dataCompra))
+            if (int.TryParse(cboRemedio.SelectedValue.ToString(), out var idRemedio))
             {
-                produto.DataCompra = dataCompra;
+                var remedio = _remedioService.GetById<Remedio>(idRemedio);
+                produto.Remed = remedio;
             }
-            produto.UnidadeVenda = txtUnidadeVenda.Text;
-
-            if (int.TryParse(cboGrupo.SelectedValue.ToString(), out var idGrupo))
+            if (int.TryParse(cboFornecedor.SelectedValue.ToString(), out var idFornecedor))
             {
-                var grupo = _grupoService.GetById<Grupo>(idGrupo);
-                produto.Grupo = grupo;
-                //_produtoService.AttachObject(grupo);
+                var fornecedor = _fornecedorService.GetById<Fornecedor>(idFornecedor);
+                produto.Forn = fornecedor;
             }
         }
 
@@ -49,27 +69,26 @@ namespace IFSPFarma.App.Cadastro
             {
                 if (IsAlteracao)
                 {
-
                     if (int.TryParse(txtId.Text, out var id))
                     {
-                        var cliente = _clienteService.GetById<Cliente>(id);
-                        PreencheObjeto(cliente);
-                        cliente = _clienteService.Update<Cliente, Cliente, ClienteValidator>(cliente);
+                        var produto = _produtoService.GetById<Produto>(id);
+                        PreencheObjeto(produto);
+                        produto = _produtoService.Update<Produto, Produto, ProdutoValidator>(produto);
                     }
-
                 }
                 else
                 {
-                    var cliente = new Cliente();
-                    PreencheObjeto(cliente);
-                    _clienteService.Add<Cliente, Cliente, ClienteValidator>(cliente);
+                    var produto = new Produto();
+                    PreencheObjeto(produto);
+                    _produtoService.Add<Produto, Produto, ProdutoValidator>(produto);
+
                 }
 
                 materialTabControl1.SelectedIndex = 1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Farma", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -77,44 +96,35 @@ namespace IFSPFarma.App.Cadastro
         {
             try
             {
-                _clienteService.Delete(id);
+                _produtoService.Delete(id);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Farma", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         protected override void CarregaGrid()
         {
-            clientes = _clienteService.Get<Cliente>().ToList();
-            gridConsualta.DataSource = clientes;
-            gridConsualta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            produtos = _produtoService.Get<ProdutoModel>(new[] { "Remedio" }).ToList();
+            gridConsualta.DataSource = produtos;
+            gridConsualta.Columns["IdRemedio"]!.Visible = false;
+
+            produtos = _produtoService.Get<ProdutoModel>(new[] { "Fornecedor" }).ToList();
+            gridConsualta.DataSource = produtos;
+            gridConsualta.Columns["IdFornecedor"]!.Visible = false;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtNome.Text = linha?.Cells["Nome"].Value.ToString();
-            txtSenha.Text = linha?.Cells["Senha"].Value.ToString();
-            txtLogin.Text = linha?.Cells["Login"].Value.ToString();
-            txtEmail.Text = linha?.Cells["Email"].Value.ToString();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
+            txtValoru.Text = linha?.Cells["Valor unitário"].Value.ToString();
+            txtValort.Text = linha?.Cells["Valor Total"].Value.ToString();
+            txtQnt.Text = linha?.Cells["Quantidade"].Value.ToString();
+            cboRemedio.SelectedValue = linha?.Cells["IdRemedio"].Value;
+            cboFornecedor.SelectedValue = linha?.Cells["IdFornecedor"].Value;
         }
 
     }
 }
+

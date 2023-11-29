@@ -23,7 +23,10 @@ namespace IFSPFarma.App.Cadastro
         {
             farmaceutico.Nome = txtNome.Text;
             farmaceutico.Endereco = txtEndereço.Text;
-            farmaceutico.Idade = txtIdade.ToString;
+            if (int.TryParse(txtIdade.Text, out var idade))
+            {
+                farmaceutico.Idade = idade;
+            }
         }
 
         public FarmaceuticoCadastro()

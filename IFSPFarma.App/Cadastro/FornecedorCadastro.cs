@@ -11,7 +11,7 @@ namespace IFSPFarma.App.Cadastro
 
         private readonly IBaseService<Fornecedor> _fornecedorService;
 
-        private List<Farmaceutico>? fornecedores;
+        private List<Fornecedor>? fornecedores;
 
         public FornecedorCadastro(IBaseService<Fornecedor> fornecedorService)
         {

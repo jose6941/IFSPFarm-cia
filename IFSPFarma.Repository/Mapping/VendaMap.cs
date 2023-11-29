@@ -14,7 +14,11 @@ namespace IFSPStore.Repository.Mapping
 
             builder.Property(prop => prop.Data)
                 .IsRequired()
-                .HasColumnType("database");    
+                .HasColumnType("database");
+
+            builder.HasMany(prop => prop.Produtos);
+
+            builder.HasKey(prop => prop.TotalVenda);
         }
     }
 }

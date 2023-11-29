@@ -20,11 +20,11 @@ namespace IFSPFarma.App.Cadastro
         }
 
         private void PreencheObjeto(Cliente cliente)
-        {         
+        {
             cliente.Nome = txtNome.Text;
             cliente.Senha = txtSenha.Text;
             cliente.Login = txtLogin.Text;
-            cliente.Email = txtEmail.Text;      
+            cliente.Email = txtEmail.Text;
         }
 
         public ClienteCadastro()
@@ -38,14 +38,14 @@ namespace IFSPFarma.App.Cadastro
             {
                 if (IsAlteracao)
                 {
-                    
+
                     if (int.TryParse(txtId.Text, out var id))
                     {
                         var cliente = _clienteService.GetById<Cliente>(id);
                         PreencheObjeto(cliente);
                         cliente = _clienteService.Update<Cliente, Cliente, ClienteValidator>(cliente);
                     }
-                    
+
                 }
                 else
                 {

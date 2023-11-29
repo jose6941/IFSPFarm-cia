@@ -8,8 +8,9 @@ namespace IFSPFarmacia.Domain.Entities
         {
 
         }
-        public Produto(int id, int quantidade, double valorunitario, double valortotal, Fornecedor forn, Remedio remed) : base(id)
+        public Produto(int id,string descricao, int quantidade, double valorunitario, double valortotal, Fornecedor forn, Remedio remed) : base(id)
         {
+            Descricao = descricao;
             Quantidade = quantidade;
             ValorUnitario = valorunitario;
             ValorTotal = valortotal;
@@ -17,6 +18,7 @@ namespace IFSPFarmacia.Domain.Entities
             Remed = remed;
         }
         public int Quantidade { get; set; }
+        public string Descricao { get; set; }
         public double ValorUnitario { get; set; }
         public double ValorTotal { get; set; }
         public Fornecedor Forn { get; set; }
