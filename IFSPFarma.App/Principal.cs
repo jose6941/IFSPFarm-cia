@@ -14,7 +14,6 @@ namespace IFSPFarma.App
         public Principal()
         {
             InitializeComponent();
-            CarregaLogin();
         }
 
         private void CarregaLogin()
@@ -25,11 +24,7 @@ namespace IFSPFarma.App
                 if (login.ShowDialog() != DialogResult.OK)
                 {
                     Environment.Exit(0);
-                }
-                else
-                {
-                    //lblCliente.Text = $"Usuário: {Cliente.Nome}";
-                }
+                }             
             }
         }
 
@@ -39,24 +34,9 @@ namespace IFSPFarma.App
             {
                 e.Cancel = true;
             }
-        }
 
-        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Exibeformulario<ClienteCadastro>();
         }
-
-        private void grupoDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Exibeformulario<FarmaceuticoCadastro>();
-        }
-
        
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void Exibeformulario<TFormlario>() where TFormlario : Form
         {
             var cad = ConfigDl.ServicesProvider!.GetService<TFormlario>();
@@ -70,6 +50,36 @@ namespace IFSPFarma.App
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<ClienteCadastro>();
+        }
+
+        private void farmaceuticoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<FarmaceuticoCadastro>();
+        }
+
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<FornecedorCadastro>();
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<ProdutoCadastro>();
+        }
+
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<VendaCadastro>();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -58,10 +58,11 @@ namespace IFSPFarma.App.Infra
             Services.AddTransient<ClienteCadastro, ClienteCadastro>();          
 
             // Mapping
-            /*
+           
             Services.AddSingleton(new MapperConfiguration(config =>
             {
                 config.CreateMap<Cliente, ClienteModel>();
+                
                 config.CreateMap<Farmaceutico, FarmaceuticoModel>();               
                 config.CreateMap<Fornecedor, FornecedorModel>();
                 config.CreateMap<Produto, ProdutoModel>()
@@ -72,14 +73,16 @@ namespace IFSPFarma.App.Infra
                     .ForMember(d => d.Cliente, d => d.MapFrom(x => x.Client!.Nome))
                     .ForMember(d => d.IdFarmaceutico, d => d.MapFrom(x => x.Farma!.Id))
                     .ForMember(d => d.Farmaceutico, d => d.MapFrom(x => x.Farma!.Nome));
+                /*
                 config.CreateMap<VendaProduto, VendaProduto>()
                     .ForMember(d => d.IdVenda, d => d.MapFrom(x => x.Vend!.Id))
                     .ForMember(d => d.Venda, d => d.MapFrom(x => x.Vend!.Nome))
                     .ForMember(d => d.IdProduto, d => d.MapFrom(x => x.Produto!.Id))
                     .ForMember(d => d.Produto, d => d.MapFrom(x => x.Produto!.Nome));
+                */
 
             }).CreateMapper());
-            */
+            
             ServicesProvider = Services.BuildServiceProvider();
         }
     }

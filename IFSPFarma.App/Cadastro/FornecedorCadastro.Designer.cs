@@ -51,7 +51,6 @@
             this.tabPage1.Controls.Add(this.txtCnpj);
             this.tabPage1.Controls.Add(this.txtNome);
             this.tabPage1.Size = new System.Drawing.Size(540, 420);
-            this.tabPage1.Controls.SetChildIndex(this.button1, 0);
             this.tabPage1.Controls.SetChildIndex(this.txtNome, 0);
             this.tabPage1.Controls.SetChildIndex(this.txtCnpj, 0);
             this.tabPage1.Controls.SetChildIndex(this.txtRazaosocial, 0);

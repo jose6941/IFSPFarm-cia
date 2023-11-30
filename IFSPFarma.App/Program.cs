@@ -1,4 +1,4 @@
-namespace IFSPStore.App
+namespace IFSPFarma.App.Infra
 {
     internal static class Program
     {
@@ -8,11 +8,11 @@ namespace IFSPStore.App
         [STAThread]
         static void Main()
         {
-            //ConfigureDI.ConfiguraServices();
+            ConfigDl.ConfiguraServices();
             // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            // see https://aka.ms/applicationconfiguration.         
             ApplicationConfiguration.Initialize();
-            //Application.Run(new FormPrincipal());
+            Application.Run(new Principal());
         }
     }
 }

@@ -8,15 +8,17 @@ namespace IFSPFarmacia.Domain.Entities
         {
 
         }
-        public VendaProduto(int id, double total, double desconto, int quantidade, Venda vend, Produto prod) : base(id)
+        public VendaProduto(int id, double total,double valorunit, double desconto, int quantidade, Venda vend, Produto prod) : base(id)
         {
             Total = total;
+            ValorUnit = valorunit;
             Desconto = desconto;
             Quantidade = quantidade;
             Vend = vend;
             Prod = prod;
         }
         public double Total { get; set; }
+        public double ValorUnit { get; set; }
         public double Desconto { get; set; }
         public int Quantidade { get; set; }
         public Venda Vend { get; set; }

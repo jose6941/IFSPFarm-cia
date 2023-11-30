@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public double Total { get; set; }
+        public double ValorUnit { get; set; }
         public double Desconto { get; set; }
         public int Quantidade { get; set; }
         public int IdVenda { get; set; }

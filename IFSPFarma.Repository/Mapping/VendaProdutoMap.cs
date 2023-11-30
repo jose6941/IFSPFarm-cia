@@ -16,6 +16,10 @@ namespace IFSPStore.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("double");
 
+            builder.Property(prop => prop.ValorUnit)
+                .IsRequired()
+                .HasColumnType("double");
+
             builder.Property(prop => prop.Desconto)
                 .IsRequired()
                 .HasColumnType("double");

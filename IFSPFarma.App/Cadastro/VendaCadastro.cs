@@ -72,7 +72,7 @@ namespace IFSPFarma.App.Cadastro
 
                 venda.Produtos.Add(produtos);
             }
-
+        }
             protected override void Novo()
         {
             base.Novo();
@@ -87,7 +87,7 @@ namespace IFSPFarma.App.Cadastro
             {
                 if (IsAlteracao)
                 {
-                    if (int.TryParse(txtId.Text, out var id))
+                    if (int.TryParse(txtTotalvenda.Text, out var id))
                     {
                         var venda = _vendaService.GetById<Venda>(id);
                         PreencheObjeto(venda);
@@ -135,7 +135,7 @@ namespace IFSPFarma.App.Cadastro
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             int.TryParse(linha?.Cells["Id"].Value.ToString(), out var id);
-            txtId.Text = linha?.Cells["Id"].Value.ToString();
+            txtTotalvenda.Text = linha?.Cells["Id"].Value.ToString();
             cboCliente.SelectedValue = linha?.Cells["IdCliente"].Value;
             cboFarmaceutico.SelectedValue = linha?.Cells["IdFarmaceutico"].Value;
             txtData.Text = DateTime.TryParse(linha?.Cells["Data"].Value.ToString(), out var dataC)
@@ -172,17 +172,19 @@ namespace IFSPFarma.App.Cadastro
                 _vendaProduto = new List<VendaProdutoModel>();
             }
             source.DataSource = _vendaProduto.ToArray();
-            gridConsualta.DataSource = source;
-            gridConsualta.Columns["Id"].Visible = false;
-            gridConsualta.Columns["IdProduto"].HeaderText = "Id.Produto";
-            gridConsualta.Columns["ValorUnitario"].DefaultCellStyle.Format = "C2";
-            gridConsualta.Columns["ValorUnitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            gridConsualta.Columns["ValorTotal"].DefaultCellStyle.Format = "C2";
-            gridConsualta.Columns["ValorTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            gridConsualta.Columns["Quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gridVendas.DataSource = source;
+            gridVendas.Columns["Id"].Visible = false;
+            gridVendas.Columns["IdProduto"].HeaderText = "Id.Produto";
+            gridVendas.Columns["ValorUnitario"].DefaultCellStyle.Format = "C2";
+            gridVendas.Columns["ValorUnitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            gridVendas.Columns["ValorTotal"].DefaultCellStyle.Format = "C2";
+            gridVendas.Columns["ValorTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            gridVendas.Columns["Desconto"].DefaultCellStyle.Format = "C2";
+            gridVendas.Columns["Desconto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            gridVendas.Columns["Quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void materialButton1_Click(object sender, EventArgs e)
         {
             if (ValidaItem())
             {
@@ -194,12 +196,59 @@ namespace IFSPFarma.App.Cadastro
                     vendaProduto.Produto = produto.Descricao;
                 }
 
+                if (float.TryParse(txtValoru.Text, NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out var valoru))
+                {
+                    vendaProduto.ValorUnit = valoru;
+                }
+
+                if (int.TryParse(txtQnt.Text, out var qnt))
+                {
+                    vendaProduto.Quantidade = qnt;
+                }
+
+                vendaProduto.Total = vendaProduto.Quantidade * vendaProduto.ValorUnit;
+
+                _vendaProduto.Add(vendaProduto);
+                CalculaTotalVenda();
+                CarregaGridItensVenda();
             }
         }
 
         private bool ValidaItem()
         {
             return true;
+        }
+
+        private void txtValor_Leave(object sender, EventArgs e)
+        {
+            if (double.TryParse(txtValoru.Text, out double value))
+                txtValoru.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", value);
+            else
+                txtValoru.Text = string.Empty;
+
+            CalculaTotalItem();
+        }
+
+        private void CalculaTotalItem()
+        {
+            var convVlr = float.TryParse(txtValoru.Text, NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out float valoru);
+            var convQtd = int.TryParse(txtQnt.Text, out int qnt);
+            if (convVlr && convQtd)
+            {
+                var valorTotal = qnt * valoru;
+                txtTotalvenda.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", valorTotal);
+            }
+        }
+
+        private void CalculaTotalVenda()
+        {
+            lblTotal.Text = $"Valor Total: {string.Format(CultureInfo.CurrentCulture, "{0:C2}", _vendaProduto.Sum(x => x.Total))}";
+            lblProdutos.Text = $"Qtd. Produtos: {_vendaProduto.Sum(x => x.Quantidade)}";
+        }
+
+        private void txtQuantidade_Leave(object sender, EventArgs e)
+        {
+            CalculaTotalItem();
         }
     }
 }

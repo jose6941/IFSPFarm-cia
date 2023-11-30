@@ -55,7 +55,6 @@
             tabPage1.Controls.Add(txtQnt);
             tabPage1.Controls.Add(txtValoru);
             tabPage1.Size = new Size(357, 412);
-            tabPage1.Controls.SetChildIndex(button1, 0);
             tabPage1.Controls.SetChildIndex(txtValoru, 0);
             tabPage1.Controls.SetChildIndex(txtQnt, 0);
             tabPage1.Controls.SetChildIndex(txtValort, 0);

@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.materialTabControl1 = new ReaLTaiizor.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnSalvar = new ReaLTaiizor.Controls.MaterialButton();
-            this.btnCancelar = new ReaLTaiizor.Controls.MaterialButton();
+            this.txtSalvar = new Guna.UI2.WinForms.Guna2Button();
+            this.txtCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.tabPageConsulta = new System.Windows.Forms.TabPage();
             this.btnExcluir = new ReaLTaiizor.Controls.MaterialButton();
             this.btnEditar = new ReaLTaiizor.Controls.MaterialButton();
@@ -55,73 +58,60 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(477, 402);
+            this.materialTabControl1.Size = new System.Drawing.Size(596, 415);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.btnSalvar);
-            this.tabPage1.Controls.Add(this.btnCancelar);
+            this.tabPage1.Controls.Add(this.txtSalvar);
+            this.tabPage1.Controls.Add(this.txtCancelar);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(469, 374);
+            this.tabPage1.Size = new System.Drawing.Size(588, 387);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // txtSalvar
             // 
-            this.button1.Location = new System.Drawing.Point(238, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(8, 8);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSalvar.Animated = true;
+            this.txtSalvar.AnimatedGIF = true;
+            this.txtSalvar.CustomizableEdges = customizableEdges1;
+            this.txtSalvar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtSalvar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.txtSalvar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.txtSalvar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.txtSalvar.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSalvar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSalvar.ForeColor = System.Drawing.Color.Black;
+            this.txtSalvar.Location = new System.Drawing.Point(477, 351);
+            this.txtSalvar.Name = "txtSalvar";
+            this.txtSalvar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.txtSalvar.Size = new System.Drawing.Size(105, 30);
+            this.txtSalvar.TabIndex = 5;
+            this.txtSalvar.Text = "Salvar";
             // 
-            // btnSalvar
+            // txtCancelar
             // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSalvar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnSalvar.Depth = 0;
-            this.btnSalvar.HighEmphasis = true;
-            this.btnSalvar.Icon = null;
-            this.btnSalvar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnSalvar.Location = new System.Drawing.Point(383, 329);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSalvar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSalvar.Size = new System.Drawing.Size(76, 36);
-            this.btnSalvar.TabIndex = 1;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnSalvar.UseAccentColor = false;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCancelar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnCancelar.Depth = 0;
-            this.btnCancelar.HighEmphasis = true;
-            this.btnCancelar.Icon = null;
-            this.btnCancelar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnCancelar.Location = new System.Drawing.Point(279, 329);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnCancelar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnCancelar.Size = new System.Drawing.Size(96, 36);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnCancelar.UseAccentColor = false;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.materialButton2_Click);
+            this.txtCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCancelar.Animated = true;
+            this.txtCancelar.AnimatedGIF = true;
+            this.txtCancelar.CustomizableEdges = customizableEdges3;
+            this.txtCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.txtCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.txtCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.txtCancelar.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCancelar.ForeColor = System.Drawing.Color.Black;
+            this.txtCancelar.Location = new System.Drawing.Point(364, 351);
+            this.txtCancelar.Name = "txtCancelar";
+            this.txtCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.txtCancelar.Size = new System.Drawing.Size(107, 30);
+            this.txtCancelar.TabIndex = 4;
+            this.txtCancelar.Text = "Cancelar";
             // 
             // tabPageConsulta
             // 
@@ -132,7 +122,7 @@
             this.tabPageConsulta.Location = new System.Drawing.Point(4, 24);
             this.tabPageConsulta.Name = "tabPageConsulta";
             this.tabPageConsulta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConsulta.Size = new System.Drawing.Size(619, 453);
+            this.tabPageConsulta.Size = new System.Drawing.Size(588, 387);
             this.tabPageConsulta.TabIndex = 1;
             this.tabPageConsulta.Text = "Consulta";
             this.tabPageConsulta.UseVisualStyleBackColor = true;
@@ -147,7 +137,7 @@
             this.btnExcluir.HighEmphasis = true;
             this.btnExcluir.Icon = null;
             this.btnExcluir.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnExcluir.Location = new System.Drawing.Point(532, 408);
+            this.btnExcluir.Location = new System.Drawing.Point(505, 345);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnExcluir.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.btnExcluir.Name = "btnExcluir";
@@ -169,7 +159,7 @@
             this.btnEditar.HighEmphasis = true;
             this.btnEditar.Icon = null;
             this.btnEditar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnEditar.Location = new System.Drawing.Point(453, 408);
+            this.btnEditar.Location = new System.Drawing.Point(426, 345);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEditar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
@@ -191,7 +181,7 @@
             this.btnNovo.HighEmphasis = true;
             this.btnNovo.Icon = null;
             this.btnNovo.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnNovo.Location = new System.Drawing.Point(381, 408);
+            this.btnNovo.Location = new System.Drawing.Point(354, 345);
             this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnNovo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.btnNovo.Name = "btnNovo";
@@ -213,7 +203,7 @@
             this.gridConsualta.Location = new System.Drawing.Point(6, 6);
             this.gridConsualta.Name = "gridConsualta";
             this.gridConsualta.RowTemplate.Height = 25;
-            this.gridConsualta.Size = new System.Drawing.Size(607, 387);
+            this.gridConsualta.Size = new System.Drawing.Size(576, 327);
             this.gridConsualta.TabIndex = 0;
             this.gridConsualta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsualta_CellContentClick);
             // 
@@ -221,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 469);
+            this.ClientSize = new System.Drawing.Size(602, 482);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerAutoHide = false;
             this.DrawerTabControl = this.materialTabControl1;
@@ -230,7 +220,6 @@
             this.Load += new System.EventHandler(this.CadastroBase_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPageConsulta.ResumeLayout(false);
             this.tabPageConsulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridConsualta)).EndInit();
@@ -239,15 +228,14 @@
         }
 
         #endregion
-        private ReaLTaiizor.Controls.MaterialButton btnSalvar;
-        private ReaLTaiizor.Controls.MaterialButton btnCancelar;
         private ReaLTaiizor.Controls.MaterialButton btnExcluir;
         private ReaLTaiizor.Controls.MaterialButton btnEditar;
         private ReaLTaiizor.Controls.MaterialButton btnNovo;
         protected ReaLTaiizor.Controls.MaterialTabControl materialTabControl1;
-        protected Button button1;
         protected TabPage tabPageConsulta;
         protected DataGridView gridConsualta;
         protected TabPage tabPage1;
+        private Guna.UI2.WinForms.Guna2Button txtSalvar;
+        private Guna.UI2.WinForms.Guna2Button txtCancelar;
     }
 }
