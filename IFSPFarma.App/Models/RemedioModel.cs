@@ -1,4 +1,3 @@
-﻿using IFSPFarmacia.Domain.Entities;
 
 namespace IFSPFarma.App.Models
 {
