@@ -1,4 +1,6 @@
-﻿namespace IFSPFarma.App.Models
+﻿using IFSPFarmacia.Domain.Entities;
+
+namespace IFSPFarma.App.Models
 {
     public class VendaProdutoModel
     {

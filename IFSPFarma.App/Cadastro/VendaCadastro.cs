@@ -1,10 +1,7 @@
-﻿using IFSPFarma.App;
+﻿using IFSPFarma.App.Models;
 using IFSPFarmacia.Domain.Base;
 using IFSPFarmacia.Domain.Entities;
 using IFSPFarma.Service.Validators;
-using ReaLTaiizor.Controls;
-using IFSPFarma.App.Models;
-using System.Xml.Schema;
 using System.Globalization;
 
 namespace IFSPFarma.App.Cadastro
@@ -17,11 +14,23 @@ namespace IFSPFarma.App.Cadastro
         private readonly IBaseService<Cliente> _clienteService;
         private readonly IBaseService<Produto> _produtoService;
 
-        private List<VendaModel>? vendas;
+        private List<VendaModel> vendas;
 
-        public VendaCadastro()
+        public VendaCadastro(IBaseService<Venda> vendaService,
+                             IBaseService<Cliente> clienteService,
+                             IBaseService<Produto> produtoService,
+                             IBaseService<Farmaceutico> farmaceuticoService)
+
         {
+            _vendaService = vendaService;
+            _clienteService = clienteService;
+            _produtoService = produtoService;
+            _farmaceuticoService = farmaceuticoService;
+            _vendaProduto = new List<VendaProdutoModel>();
             InitializeComponent();
+            CarregarCombo();
+            CarregaGridItensVenda();
+            Novo();
         }
 
         private void CarregarCombo()
@@ -73,7 +82,7 @@ namespace IFSPFarma.App.Cadastro
                 venda.Produtos.Add(produtos);
             }
         }
-            protected override void Novo()
+        protected override void Novo()
         {
             base.Novo();
             _vendaProduto.Clear();
@@ -152,9 +161,8 @@ namespace IFSPFarma.App.Cadastro
                     Id = p.Id,
                     Total = p.Total,
                     Desconto = p.Desconto,
-                    Quantidade = p.Quantidade, 
+                    Quantidade = p.Quantidade,
                     IdVenda = p.Vend!.Id,
-                    Venda = p.Vend!.Descricao,
                     IdProduto = p.Prod!.Id,
                     Produto = p.Prod!.Descricao
                 };
@@ -249,6 +257,11 @@ namespace IFSPFarma.App.Cadastro
         private void txtQuantidade_Leave(object sender, EventArgs e)
         {
             CalculaTotalItem();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

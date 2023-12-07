@@ -1,5 +1,5 @@
 ﻿using IFSPFarmacia.Domain.Entities;
-using IFSPStore.Repository.Mapping;
+using IFSPFarma.Repository.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 

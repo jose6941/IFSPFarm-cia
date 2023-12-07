@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IFSPStore.Repository.Mapping
+namespace IFSPFarma.Repository.Mapping
 {
     public class ProdutoMap : IEntityTypeConfiguration<Produto>
     {
@@ -20,10 +20,9 @@ namespace IFSPStore.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("double");
 
-            builder.Property(prop => prop.ValorTotal)
+            builder.Property(prop => prop.Descricao)
                 .IsRequired()
-                .HasColumnType("double");
-
+                .HasColumnType("varchar(100)");
         }
     }
 }

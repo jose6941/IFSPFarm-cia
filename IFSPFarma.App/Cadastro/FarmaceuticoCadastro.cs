@@ -22,7 +22,7 @@ namespace IFSPFarma.App.Cadastro
         private void PreencheObjeto(Farmaceutico farmaceutico)
         {
             farmaceutico.Nome = txtNome.Text;
-            farmaceutico.Endereco = txtEndereço.Text;
+            farmaceutico.Endereco = txtEndereco.Text;
             if (int.TryParse(txtIdade.Text, out var idade))
             {
                 farmaceutico.Idade = idade;
@@ -87,9 +87,40 @@ namespace IFSPFarma.App.Cadastro
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
-            txtEndereço.Text = linha?.Cells["Endereço"].Value.ToString();
-            txtIdade.Text = linha?.Cells["Idade"].Value.ToString();         
+            txtEndereco.Text = linha?.Cells["Endereco"].Value.ToString();
+            txtIdade.Text = linha?.Cells["Idade"].Value.ToString();
         }
 
+        protected void LimpaCampos()
+        {
+            IsAlteracao = false;
+            foreach (var control in tabPage1.Controls)
+            {
+                if (control is MaterialTextBoxEdit)
+                {
+                    ((MaterialTextBoxEdit)control).Clear();
+                }
+
+                if (control is MaterialMaskedTextBox)
+                {
+                    ((MaterialMaskedTextBox)control).Clear();
+                }
+            }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

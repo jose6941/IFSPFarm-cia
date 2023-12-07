@@ -44,6 +44,7 @@ namespace IFSPFarma.App.Infra
             Services.AddScoped<IBaseRepository<Produto>, BaseRepository<Produto>>();
             Services.AddScoped<IBaseRepository<Remedio>, BaseRepository<Remedio>>();
             Services.AddScoped<IBaseRepository<VendaProduto>, BaseRepository<VendaProduto>>();
+            Services.AddScoped<IBaseRepository<Venda>, BaseRepository<Venda>>();
 
             // Services
             Services.AddScoped<IBaseService<Cliente>, BaseService<Cliente>>();
@@ -52,19 +53,27 @@ namespace IFSPFarma.App.Infra
             Services.AddScoped<IBaseService<Produto>, BaseService<Produto>>();
             Services.AddScoped<IBaseService<Remedio>, BaseService<Remedio>>();
             Services.AddScoped<IBaseService<VendaProduto>, BaseService<VendaProduto>>();
+            Services.AddScoped<IBaseService<Venda>, BaseService<Venda>>();
 
             // Formulários
             Services.AddTransient<Login, Login>();
-            Services.AddTransient<ClienteCadastro, ClienteCadastro>();          
+            Services.AddTransient<ClienteCadastro, ClienteCadastro>();
+            Services.AddTransient<FarmaceuticoCadastro, FarmaceuticoCadastro>();
+            Services.AddTransient<FornecedorCadastro, FornecedorCadastro>();
+            Services.AddTransient<ClienteCadastro, ClienteCadastro>();
+            Services.AddTransient<RemedioCadastro, RemedioCadastro>();
+            Services.AddTransient<ProdutoCadastro, ProdutoCadastro>();
+            Services.AddTransient<VendaCadastro, VendaCadastro>();
 
             // Mapping
-           
+
             Services.AddSingleton(new MapperConfiguration(config =>
             {
                 config.CreateMap<Cliente, ClienteModel>();
                 
                 config.CreateMap<Farmaceutico, FarmaceuticoModel>();               
                 config.CreateMap<Fornecedor, FornecedorModel>();
+                config.CreateMap<Remedio, RemedioModel>();
                 config.CreateMap<Produto, ProdutoModel>()
                     .ForMember(d => d.Fornecedor, d => d.MapFrom(x => x.Forn!.Nome))
                     .ForMember(d => d.IdFornecedor, d => d.MapFrom(x => x.Forn!.Id));
@@ -73,13 +82,12 @@ namespace IFSPFarma.App.Infra
                     .ForMember(d => d.Cliente, d => d.MapFrom(x => x.Client!.Nome))
                     .ForMember(d => d.IdFarmaceutico, d => d.MapFrom(x => x.Farma!.Id))
                     .ForMember(d => d.Farmaceutico, d => d.MapFrom(x => x.Farma!.Nome));
-                /*
-                config.CreateMap<VendaProduto, VendaProduto>()
-                    .ForMember(d => d.IdVenda, d => d.MapFrom(x => x.Vend!.Id))
-                    .ForMember(d => d.Venda, d => d.MapFrom(x => x.Vend!.Nome))
-                    .ForMember(d => d.IdProduto, d => d.MapFrom(x => x.Produto!.Id))
-                    .ForMember(d => d.Produto, d => d.MapFrom(x => x.Produto!.Nome));
-                */
+                
+                config.CreateMap<VendaProduto, VendaProdutoModel>()
+                    .ForMember(d => d.IdVenda, d => d.MapFrom(x => x.Vend!.Id))              
+                    .ForMember(d => d.IdProduto, d => d.MapFrom(x => x.Prod!.Id))
+                    .ForMember(d => d.Produto, d => d.MapFrom(x => x.Prod!.Descricao));
+                
 
             }).CreateMapper());
             

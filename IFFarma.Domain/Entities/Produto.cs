@@ -12,7 +12,7 @@ namespace IFSPFarmacia.Domain.Entities
         {
             Descricao = descricao;
             Quantidade = quantidade;
-            ValorUnitario = valorunitario;
+            ValorUnitario = valorunitario;         
             Forn = forn;
             Remed = remed;
         }

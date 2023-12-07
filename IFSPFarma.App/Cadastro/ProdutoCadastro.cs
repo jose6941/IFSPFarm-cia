@@ -1,9 +1,8 @@
 ﻿using IFSPFarma.App;
+using IFSPFarma.App.Models;
 using IFSPFarmacia.Domain.Base;
 using IFSPFarmacia.Domain.Entities;
 using IFSPFarma.Service.Validators;
-using ReaLTaiizor.Controls;
-using IFSPFarma.App.Models;
 
 namespace IFSPFarma.App.Cadastro
 {
@@ -22,18 +21,18 @@ namespace IFSPFarma.App.Cadastro
             _fornecedorService = fornecedorService;
             _remedioService = remedioService;
             InitializeComponent();
+            CarregarCombo();
         }
 
         private void CarregarCombo()
         {
-            cboRemedio.ValueMember = "Id";
-            cboRemedio.DisplayMember = "Nome";
-            cboRemedio.DataSource = _remedioService.Get<Remedio>().ToList();
+            cboTipo.ValueMember = "Id";
+            cboTipo.DisplayMember = "Nome";
+            cboTipo.DataSource = _remedioService.Get<Remedio>().ToList();
 
             cboFornecedor.ValueMember = "Id";
             cboFornecedor.DisplayMember = "Nome";
             cboFornecedor.DataSource = _fornecedorService.Get<Fornecedor>().ToList();
-
         }
 
         private void PreencheObjeto(Produto produto)
@@ -46,20 +45,18 @@ namespace IFSPFarma.App.Cadastro
             {
                 produto.Quantidade = qnt;
             }
-            if (double.TryParse(txtValort.Text, out var valort))
-            {
-                produto.ValorTotal = valort;
-            }
 
-            if (int.TryParse(cboRemedio.SelectedValue.ToString(), out var idRemedio))
-            {
-                var remedio = _remedioService.GetById<Remedio>(idRemedio);
-                produto.Remed = remedio;
-            }
+            produto.Descricao = txtNome.Text;
+
             if (int.TryParse(cboFornecedor.SelectedValue.ToString(), out var idFornecedor))
             {
                 var fornecedor = _fornecedorService.GetById<Fornecedor>(idFornecedor);
                 produto.Forn = fornecedor;
+            }
+            if (int.TryParse(cboTipo.SelectedValue.ToString(), out var idRemedio))
+            {
+                var remedio = _remedioService.GetById<Remedio>(idRemedio);
+                produto.Remed = remedio;
             }
         }
 
@@ -75,6 +72,7 @@ namespace IFSPFarma.App.Cadastro
                         PreencheObjeto(produto);
                         produto = _produtoService.Update<Produto, Produto, ProdutoValidator>(produto);
                     }
+
                 }
                 else
                 {
@@ -106,25 +104,25 @@ namespace IFSPFarma.App.Cadastro
 
         protected override void CarregaGrid()
         {
-            produtos = _produtoService.Get<ProdutoModel>(new[] { "Remedio" }).ToList();
+            produtos = _produtoService.Get<ProdutoModel>(new[] { "Produto" }).ToList();
             gridConsualta.DataSource = produtos;
-            gridConsualta.Columns["IdRemedio"]!.Visible = false;
-
-            produtos = _produtoService.Get<ProdutoModel>(new[] { "Fornecedor" }).ToList();
-            gridConsualta.DataSource = produtos;
-            gridConsualta.Columns["IdFornecedor"]!.Visible = false;
+            gridConsualta.Columns["IdProduto"]!.Visible = false;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtValoru.Text = linha?.Cells["Valor unitário"].Value.ToString();
-            txtValort.Text = linha?.Cells["Valor Total"].Value.ToString();
             txtQnt.Text = linha?.Cells["Quantidade"].Value.ToString();
-            cboRemedio.SelectedValue = linha?.Cells["IdRemedio"].Value;
+            txtNome.Text = linha?.Cells["IdRemedio"].Value.ToString();
             cboFornecedor.SelectedValue = linha?.Cells["IdFornecedor"].Value;
+            cboTipo.SelectedValue = linha?.Cells["IdRemedio"].Value;
         }
 
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

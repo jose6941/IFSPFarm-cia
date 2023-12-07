@@ -24,7 +24,7 @@ namespace IFSPFarma.App
                 if (login.ShowDialog() != DialogResult.OK)
                 {
                     Environment.Exit(0);
-                }             
+                }
             }
         }
 
@@ -36,7 +36,7 @@ namespace IFSPFarma.App
             }
 
         }
-       
+
         private void Exibeformulario<TFormlario>() where TFormlario : Form
         {
             var cad = ConfigDl.ServicesProvider!.GetService<TFormlario>();
@@ -80,6 +80,11 @@ namespace IFSPFarma.App
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void remédioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<RemedioCadastro>();
         }
     }
 }

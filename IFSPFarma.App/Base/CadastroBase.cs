@@ -138,5 +138,31 @@ namespace IFSPFarma.App
 
         }
         #endregion
+
+        private void txtCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(@"Deseja realmente cancelar?", @"IFSP Store", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                LimpaCampos();
+                materialTabControl1.SelectedIndex = 1;
+            }
+        }
+
+        private void txtSalvar_Click(object sender, EventArgs e)
+        {
+            Salvar();
+        }
+
+        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

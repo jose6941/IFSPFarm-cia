@@ -104,5 +104,18 @@ namespace IFSPFarma.App.Cadastro
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(@"Deseja realmente cancelar?", @"IFSP Store", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                LimpaCampos();
+                materialTabControl1.SelectedIndex = 1;
+            }
+        }
+
+
     }
 }

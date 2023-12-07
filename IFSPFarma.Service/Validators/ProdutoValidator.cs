@@ -10,12 +10,14 @@ namespace IFSPFarma.Service.Validators
             RuleFor(c => c.Quantidade)
                 .NotEmpty().WithMessage("Por favor informe a quantidade.")
                 .NotNull().WithMessage("Por favor informe a quantidade.");
+
             RuleFor(c => c.ValorUnitario)
                 .NotEmpty().WithMessage("Por favor informe o valor unitario.")
                 .NotNull().WithMessage("Por favor informe o valor unitario.");
-            RuleFor(c => c.ValorTotal)
-                .NotEmpty().WithMessage("Por favor informe o valor total.")
-                .NotNull().WithMessage("Por favor informe o valor total.");      
+
+            RuleFor(c => c.Descricao)
+                .NotEmpty().WithMessage("Por favor informe o nome.")
+                .NotNull().WithMessage("Por favor informe o nome.");
         }
     }
 }

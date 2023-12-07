@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IFSPStore.Repository.Mapping
+namespace IFSPFarma.Repository.Mapping
 {
     public class RemedioMap : IEntityTypeConfiguration<Remedio>
     {
