@@ -8,9 +8,8 @@ namespace IFSPFarmacia.Domain.Entities
         {
             Produtos = new List<VendaProduto>();
         }
-        public Venda(int id,String descricao, DateTime data, Cliente client, Farmaceutico farma, List<VendaProduto> produtos,double totalvenda) : base(id)
+        public Venda(int id, DateTime data, Cliente client, Farmaceutico farma, List<VendaProduto> produtos,double totalvenda) : base(id)
         {
-            Descricao = descricao;
             Data = data;
             Client = client;
             Farma = farma;
@@ -18,7 +17,6 @@ namespace IFSPFarmacia.Domain.Entities
             TotalVenda = totalvenda;
         }
         public DateTime Data { get; set; }
-        public String Descricao { get; set; }
         public Cliente Client { get; set; }
         public Farmaceutico Farma { get; set; }
         public List<VendaProduto> Produtos { get; set; }
