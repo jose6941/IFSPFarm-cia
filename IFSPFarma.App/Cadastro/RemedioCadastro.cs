@@ -68,7 +68,7 @@ namespace IFSPFarma.App.Cadastro
         {
             remedios = _remedioService.Get<RemedioModel>(new[] { "Remedio" }).ToList();
             gridConsualta.DataSource = remedios;
-            gridConsualta.Columns["IdProduto"]!.Visible = false;
+            gridConsualta.Columns["Nome"]!.Visible = false;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)

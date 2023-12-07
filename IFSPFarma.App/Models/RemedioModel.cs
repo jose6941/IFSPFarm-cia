@@ -1,8 +1,8 @@
-
-namespace IFSPFarma.App.Models
+﻿namespace IFSPFarma.App.Models
 {
-    internal class RemedioModel
+    public class RemedioModel
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
     }
 }

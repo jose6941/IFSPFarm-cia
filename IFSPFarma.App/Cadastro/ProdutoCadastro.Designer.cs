@@ -81,7 +81,46 @@
             tabPage1.Controls.SetChildIndex(bt, 0);
             tabPage1.Controls.SetChildIndex(btn, 0);
             // 
-            
+            // btn
+            // 
+            btn.DialogResult = DialogResult.None;
+            btn.DisabledState.BorderColor = Color.DarkGray;
+            btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn.Location = new Point(535, 618);
+            btn.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            // 
+            // bt
+            // 
+            bt.DialogResult = DialogResult.None;
+            bt.DisabledState.BorderColor = Color.DarkGray;
+            bt.DisabledState.CustomBorderColor = Color.DarkGray;
+            bt.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            bt.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            bt.Location = new Point(422, 618);
+            bt.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(431, 388);
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(329, 388);
+            // 
+            // btnNovo
+            // 
+            btnNovo.Location = new Point(227, 388);
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(431, 388);
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(329, 388);
+            // 
             // guna2GroupBox1
             // 
             guna2GroupBox1.Controls.Add(label6);

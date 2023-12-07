@@ -104,9 +104,13 @@ namespace IFSPFarma.App.Cadastro
 
         protected override void CarregaGrid()
         {
-            produtos = _produtoService.Get<ProdutoModel>(new[] { "Produto" }).ToList();
+            produtos = _produtoService.Get<ProdutoModel>(new[] { "Fornecedor" }).ToList();
             gridConsualta.DataSource = produtos;
-            gridConsualta.Columns["IdProduto"]!.Visible = false;
+            gridConsualta.Columns["IdFornecedor"]!.Visible = false;
+
+            produtos = _produtoService.Get<ProdutoModel>(new[] { "Remedio" }).ToList();
+            gridConsualta.DataSource = produtos;
+            gridConsualta.Columns["IdRemedio"]!.Visible = false;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
@@ -114,7 +118,7 @@ namespace IFSPFarma.App.Cadastro
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtValoru.Text = linha?.Cells["Valor unitário"].Value.ToString();
             txtQnt.Text = linha?.Cells["Quantidade"].Value.ToString();
-            txtNome.Text = linha?.Cells["IdRemedio"].Value.ToString();
+            txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             cboFornecedor.SelectedValue = linha?.Cells["IdFornecedor"].Value;
             cboTipo.SelectedValue = linha?.Cells["IdRemedio"].Value;
         }
