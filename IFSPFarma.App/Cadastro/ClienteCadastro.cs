@@ -116,6 +116,19 @@ namespace IFSPFarma.App.Cadastro
             }
         }
 
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void ClienteCadastro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+          
+        }
+
+        private void ClienteCadastro_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
+        }
     }
 }

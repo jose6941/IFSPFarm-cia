@@ -27,6 +27,12 @@ namespace IFSPFarma.Repository.Mapping
             builder.Property(prop => prop.Quantidade)
                  .IsRequired()
                  .HasColumnType("integer");
+
+            builder.HasOne(prop => prop.Vend)
+              .WithMany(prop => prop.Produtos)
+              .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(prop => prop.Prod);
         }
     }
 }

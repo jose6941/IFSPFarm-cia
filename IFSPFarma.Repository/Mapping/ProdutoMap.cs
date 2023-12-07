@@ -13,12 +13,10 @@ namespace IFSPFarma.Repository.Mapping
             builder.HasKey(prop => prop.Id);
 
             builder.Property(prop => prop.Quantidade)
-                .IsRequired()
-                .HasColumnType("integer");
+                .IsRequired();
 
             builder.Property(prop => prop.ValorUnitario)
-                .IsRequired()
-                .HasColumnType("double");
+                .IsRequired();                ;
 
             builder.Property(prop => prop.Descricao)
                 .IsRequired()

@@ -19,11 +19,6 @@ namespace IFSPFarma.App
 
         #region Eventos
 
-        private void CadastroBase_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void materialButton2_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(@"Deseja realmente cancelar?", @"IFSP Store", MessageBoxButtons.YesNo,
@@ -155,12 +150,17 @@ namespace IFSPFarma.App
             Salvar();
         }
 
-        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

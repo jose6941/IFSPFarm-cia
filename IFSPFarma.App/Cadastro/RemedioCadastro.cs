@@ -76,5 +76,10 @@ namespace IFSPFarma.App.Cadastro
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtTipo.Text = linha?.Cells["Tipo"].Value.ToString();
         }
+
+        private void RemedioCadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

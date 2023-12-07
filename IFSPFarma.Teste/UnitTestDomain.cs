@@ -62,7 +62,7 @@ namespace IFSPFarma.Teste
 
             produto.Quantidade = 5;
             produto.ValorUnitario = 54.60;
-            produto.ValorTotal = 273.00;
+            //produto.ValorTotal = 273.00;
 
             fornecedor.Nome = "Tiago";
             fornecedor.Cnpj = "446546545448";

@@ -58,13 +58,13 @@ namespace IFSPFarma.App.Cadastro
             if (int.TryParse(cboCliente.SelectedValue.ToString(), out var idCliente))
             {
                 var cliente = _clienteService.GetById<Cliente>(idCliente);
-                venda.Client = cliente;
+                venda.Cliente = cliente;
             }
 
             if (int.TryParse(cboFarmaceutico.SelectedValue.ToString(), out var idFarmaceutico))
             {
                 var farmaceutico = _clienteService.GetById<Farmaceutico>(idFarmaceutico);
-                venda.Farma = farmaceutico;
+                venda.Farmaceutico = farmaceutico;
             }
             venda.TotalVenda = _vendaProduto.Sum(x => x.Total);
 
@@ -183,8 +183,8 @@ namespace IFSPFarma.App.Cadastro
             gridVendas.DataSource = source;
             gridVendas.Columns["Id"].Visible = false;
             gridVendas.Columns["IdProduto"].HeaderText = "Id.Produto";
-            gridVendas.Columns["ValorUnitario"].DefaultCellStyle.Format = "C2";
-            gridVendas.Columns["ValorUnitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            gridVendas.Columns["ValorUnit"].DefaultCellStyle.Format = "C2";
+            gridVendas.Columns["ValorUnit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             gridVendas.Columns["ValorTotal"].DefaultCellStyle.Format = "C2";
             gridVendas.Columns["ValorTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             gridVendas.Columns["Desconto"].DefaultCellStyle.Format = "C2";
@@ -262,6 +262,11 @@ namespace IFSPFarma.App.Cadastro
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void VendaCadastro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Close();
         }
     }
 }

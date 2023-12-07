@@ -8,6 +8,7 @@ namespace IFSPFarmacia.Domain.Entities
         {
 
         }
+
         public Produto(int id,string descricao, int quantidade, double valorunitario, Fornecedor forn, Remedio remed) : base(id)
         {
             Descricao = descricao;

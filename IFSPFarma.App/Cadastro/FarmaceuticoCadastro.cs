@@ -122,5 +122,10 @@ namespace IFSPFarma.App.Cadastro
         {
 
         }
+
+        private void tabPageConsulta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

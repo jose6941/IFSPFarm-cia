@@ -13,12 +13,13 @@ namespace IFSPFarma.Repository.Mapping
             builder.HasKey(prop => prop.Id);
 
             builder.Property(prop => prop.Data)
-                .IsRequired()
-                .HasColumnType("database");
+                .IsRequired();
 
             builder.HasMany(prop => prop.Produtos);
 
-            builder.HasKey(prop => prop.TotalVenda);
+            builder.Property(prop => prop.TotalVenda);
+            builder.HasOne(prop => prop.Cliente);
+            builder.HasOne(prop => prop.Farmaceutico);
         }
     }
 }

@@ -21,8 +21,7 @@ namespace IFSPFarma.Repository.Mapping
                 .HasColumnType("varchar(100)");
 
             builder.Property(prop => prop.Idade)
-                .IsRequired()
-                .HasColumnType("integer");    
+                .IsRequired();    
         }
     }
 }

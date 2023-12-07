@@ -86,5 +86,10 @@ namespace IFSPFarma.App
         {
             Exibeformulario<RemedioCadastro>();
         }
+
+        private void Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
 }

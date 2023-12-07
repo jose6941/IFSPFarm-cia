@@ -88,5 +88,9 @@ namespace IFSPFarma.App.Cadastro
             txtRazaosocial.Text = linha?.Cells["Razão social"].Value.ToString();
         }
 
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
