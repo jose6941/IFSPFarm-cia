@@ -3,7 +3,6 @@ using IFSPFarmacia.Domain.Base;
 using IFSPFarmacia.Domain.Entities;
 using IFSPFarma.Service.Validators;
 using ReaLTaiizor.Controls;
-using IFSPFarma.App.Models;
 
 namespace IFSPFarma.App.Cadastro
 {
