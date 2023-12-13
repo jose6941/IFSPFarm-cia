@@ -40,206 +40,211 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtId = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtIdade = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEndereco = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNome = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tabPage1.SuspendLayout();
-            this.materialTabControl1.SuspendLayout();
-            this.guna2GroupBox1.SuspendLayout();
-            this.SuspendLayout();
+            guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            label4 = new Label();
+            txtId = new Guna.UI2.WinForms.Guna2TextBox();
+            label3 = new Label();
+            txtIdade = new Guna.UI2.WinForms.Guna2TextBox();
+            label2 = new Label();
+            txtEndereco = new Guna.UI2.WinForms.Guna2TextBox();
+            label1 = new Label();
+            txtNome = new Guna.UI2.WinForms.Guna2TextBox();
+            tabPage1.SuspendLayout();
+            materialTabControl1.SuspendLayout();
+            guna2GroupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // tabPageConsulta
             // 
-            this.tabPageConsulta.Size = new System.Drawing.Size(424, 374);
-            this.tabPageConsulta.Click += new System.EventHandler(this.tabPageConsulta_Click);
+            tabPageConsulta.Size = new Size(399, 356);
+            tabPageConsulta.Click += tabPageConsulta_Click;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.guna2GroupBox1);
-            this.tabPage1.Size = new System.Drawing.Size(467, 411);
-            this.tabPage1.Controls.SetChildIndex(this.bt, 0);
-            this.tabPage1.Controls.SetChildIndex(this.btn, 0);
-            this.tabPage1.Controls.SetChildIndex(this.guna2GroupBox1, 0);
+            tabPage1.BackColor = Color.WhiteSmoke;
+            tabPage1.Controls.Add(guna2GroupBox1);
+            tabPage1.Size = new Size(399, 356);
+            tabPage1.UseVisualStyleBackColor = false;
+            tabPage1.Controls.SetChildIndex(bt, 0);
+            tabPage1.Controls.SetChildIndex(btn, 0);
+            tabPage1.Controls.SetChildIndex(guna2GroupBox1, 0);
             // 
             // btn
             // 
-            this.btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn.Location = new System.Drawing.Point(219, 630);
-            this.btn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btn.DialogResult = DialogResult.None;
+            btn.DisabledState.BorderColor = Color.DarkGray;
+            btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btn.Location = new Point(-1350, 351);
+            btn.ShadowDecoration.CustomizableEdges = customizableEdges12;
             // 
             // bt
             // 
-            this.bt.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bt.Location = new System.Drawing.Point(106, 630);
-            this.bt.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            bt.DialogResult = DialogResult.None;
+            bt.DisabledState.BorderColor = Color.DarkGray;
+            bt.DisabledState.CustomBorderColor = Color.DarkGray;
+            bt.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            bt.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            bt.Location = new Point(-1463, 351);
+            bt.ShadowDecoration.CustomizableEdges = customizableEdges11;
             // 
             // materialTabControl1
             // 
-            this.materialTabControl1.Size = new System.Drawing.Size(475, 439);
+            materialTabControl1.Size = new Size(407, 384);
             // 
             // guna2GroupBox1
             // 
-            this.guna2GroupBox1.Controls.Add(this.label4);
-            this.guna2GroupBox1.Controls.Add(this.txtId);
-            this.guna2GroupBox1.Controls.Add(this.label3);
-            this.guna2GroupBox1.Controls.Add(this.txtIdade);
-            this.guna2GroupBox1.Controls.Add(this.label2);
-            this.guna2GroupBox1.Controls.Add(this.txtEndereco);
-            this.guna2GroupBox1.Controls.Add(this.label1);
-            this.guna2GroupBox1.Controls.Add(this.txtNome);
-            this.guna2GroupBox1.CustomizableEdges = customizableEdges9;
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(6, 6);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(412, 286);
-            this.guna2GroupBox1.TabIndex = 8;
-            this.guna2GroupBox1.Text = "Dados do farmaceutico";
+            guna2GroupBox1.BackColor = Color.Transparent;
+            guna2GroupBox1.BorderRadius = 10;
+            guna2GroupBox1.Controls.Add(label4);
+            guna2GroupBox1.Controls.Add(txtId);
+            guna2GroupBox1.Controls.Add(label3);
+            guna2GroupBox1.Controls.Add(txtIdade);
+            guna2GroupBox1.Controls.Add(label2);
+            guna2GroupBox1.Controls.Add(txtEndereco);
+            guna2GroupBox1.Controls.Add(label1);
+            guna2GroupBox1.Controls.Add(txtNome);
+            guna2GroupBox1.CustomBorderColor = Color.Lavender;
+            guna2GroupBox1.CustomizableEdges = customizableEdges9;
+            guna2GroupBox1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2GroupBox1.ForeColor = Color.DarkGray;
+            guna2GroupBox1.Location = new Point(69, 30);
+            guna2GroupBox1.Name = "guna2GroupBox1";
+            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2GroupBox1.Size = new Size(258, 271);
+            guna2GroupBox1.TabIndex = 8;
+            guna2GroupBox1.Text = "Dados do farmaceutico";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(54, 200);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 15);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Id : ";
+            label4.AutoSize = true;
+            label4.Location = new Point(17, 203);
+            label4.Name = "label4";
+            label4.Size = new Size(31, 16);
+            label4.TabIndex = 15;
+            label4.Text = "Id : ";
             // 
             // txtId
             // 
-            this.txtId.CustomizableEdges = customizableEdges1;
-            this.txtId.DefaultText = "";
-            this.txtId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtId.Location = new System.Drawing.Point(54, 218);
-            this.txtId.Name = "txtId";
-            this.txtId.PasswordChar = '\0';
-            this.txtId.PlaceholderText = "";
-            this.txtId.SelectedText = "";
-            this.txtId.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.txtId.Size = new System.Drawing.Size(136, 26);
-            this.txtId.TabIndex = 14;
+            txtId.CustomizableEdges = customizableEdges1;
+            txtId.DefaultText = "";
+            txtId.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtId.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtId.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtId.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtId.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtId.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtId.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtId.Location = new Point(17, 221);
+            txtId.Name = "txtId";
+            txtId.PasswordChar = '\0';
+            txtId.PlaceholderText = "";
+            txtId.SelectedText = "";
+            txtId.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtId.Size = new Size(118, 26);
+            txtId.TabIndex = 14;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 153);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Idade : ";
+            label3.AutoSize = true;
+            label3.Location = new Point(17, 156);
+            label3.Name = "label3";
+            label3.Size = new Size(55, 16);
+            label3.TabIndex = 13;
+            label3.Text = "Idade : ";
             // 
             // txtIdade
             // 
-            this.txtIdade.CustomizableEdges = customizableEdges3;
-            this.txtIdade.DefaultText = "";
-            this.txtIdade.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtIdade.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtIdade.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIdade.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIdade.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIdade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIdade.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIdade.Location = new System.Drawing.Point(54, 171);
-            this.txtIdade.Name = "txtIdade";
-            this.txtIdade.PasswordChar = '\0';
-            this.txtIdade.PlaceholderText = "";
-            this.txtIdade.SelectedText = "";
-            this.txtIdade.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.txtIdade.Size = new System.Drawing.Size(136, 26);
-            this.txtIdade.TabIndex = 12;
+            txtIdade.CustomizableEdges = customizableEdges3;
+            txtIdade.DefaultText = "";
+            txtIdade.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtIdade.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtIdade.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtIdade.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtIdade.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIdade.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIdade.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIdade.Location = new Point(17, 174);
+            txtIdade.Name = "txtIdade";
+            txtIdade.PasswordChar = '\0';
+            txtIdade.PlaceholderText = "";
+            txtIdade.SelectedText = "";
+            txtIdade.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtIdade.Size = new Size(118, 26);
+            txtIdade.TabIndex = 12;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 102);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Endereço : ";
+            label2.AutoSize = true;
+            label2.Location = new Point(17, 105);
+            label2.Name = "label2";
+            label2.Size = new Size(79, 16);
+            label2.TabIndex = 11;
+            label2.Text = "Endereço : ";
             // 
             // txtEndereco
             // 
-            this.txtEndereco.CustomizableEdges = customizableEdges5;
-            this.txtEndereco.DefaultText = "";
-            this.txtEndereco.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEndereco.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEndereco.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEndereco.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEndereco.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEndereco.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndereco.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEndereco.Location = new System.Drawing.Point(54, 120);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.PasswordChar = '\0';
-            this.txtEndereco.PlaceholderText = "";
-            this.txtEndereco.SelectedText = "";
-            this.txtEndereco.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.txtEndereco.Size = new System.Drawing.Size(288, 26);
-            this.txtEndereco.TabIndex = 10;
+            txtEndereco.CustomizableEdges = customizableEdges5;
+            txtEndereco.DefaultText = "";
+            txtEndereco.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtEndereco.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtEndereco.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtEndereco.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtEndereco.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEndereco.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEndereco.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtEndereco.Location = new Point(17, 123);
+            txtEndereco.Name = "txtEndereco";
+            txtEndereco.PasswordChar = '\0';
+            txtEndereco.PlaceholderText = "";
+            txtEndereco.SelectedText = "";
+            txtEndereco.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtEndereco.Size = new Size(224, 26);
+            txtEndereco.TabIndex = 10;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Nome : ";
+            label1.AutoSize = true;
+            label1.Location = new Point(17, 58);
+            label1.Name = "label1";
+            label1.Size = new Size(56, 16);
+            label1.TabIndex = 9;
+            label1.Text = "Nome : ";
             // 
             // txtNome
             // 
-            this.txtNome.CustomizableEdges = customizableEdges7;
-            this.txtNome.DefaultText = "";
-            this.txtNome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNome.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNome.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNome.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNome.Location = new System.Drawing.Point(54, 73);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.PasswordChar = '\0';
-            this.txtNome.PlaceholderText = "";
-            this.txtNome.SelectedText = "";
-            this.txtNome.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.txtNome.Size = new System.Drawing.Size(288, 26);
-            this.txtNome.TabIndex = 8;
+            txtNome.CustomizableEdges = customizableEdges7;
+            txtNome.DefaultText = "";
+            txtNome.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtNome.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtNome.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtNome.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtNome.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtNome.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNome.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtNome.Location = new Point(17, 76);
+            txtNome.Name = "txtNome";
+            txtNome.PasswordChar = '\0';
+            txtNome.PlaceholderText = "";
+            txtNome.SelectedText = "";
+            txtNome.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtNome.Size = new Size(224, 26);
+            txtNome.TabIndex = 8;
             // 
             // FarmaceuticoCadastro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 506);
-            this.Name = "FarmaceuticoCadastro";
-            this.Text = "Cadastro de farmaceuticos";
-            this.tabPage1.ResumeLayout(false);
-            this.materialTabControl1.ResumeLayout(false);
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(413, 451);
+            Name = "FarmaceuticoCadastro";
+            Text = "Cadastro de farmaceuticos";
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            materialTabControl1.ResumeLayout(false);
+            guna2GroupBox1.ResumeLayout(false);
+            guna2GroupBox1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

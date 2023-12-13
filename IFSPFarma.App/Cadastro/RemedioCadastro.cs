@@ -4,12 +4,15 @@ using IFSPFarmacia.Domain.Entities;
 using IFSPFarma.Service.Validators;
 using ReaLTaiizor.Controls;
 
+
 namespace IFSPFarma.App.Cadastro
 {
     public partial class RemedioCadastro : CadastroBase
     {
         private readonly IBaseService<Remedio> _remedioService;
-        private List<RemedioModel>? remedios;
+
+        private List<Remedio>? remedios;
+
         public RemedioCadastro(IBaseService<Remedio> remedioService)
         {
             _remedioService = remedioService;
@@ -47,7 +50,7 @@ namespace IFSPFarma.App.Cadastro
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Farma", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -59,21 +62,21 @@ namespace IFSPFarma.App.Cadastro
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Farma", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         protected override void CarregaGrid()
         {
-            remedios = _remedioService.Get<RemedioModel>(new[] { "Remedio" }).ToList();
+            remedios = _remedioService.Get<Remedio>().ToList();
             gridConsualta.DataSource = remedios;
-            gridConsualta.Columns["Nome"]!.Visible = false;
+            gridConsualta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtTipo.Text = linha?.Cells["Tipo"].Value.ToString();
+            txtTipo.Text = linha?.Cells["Nome"].Value.ToString();
         }
 
         private void RemedioCadastro_Load(object sender, EventArgs e)

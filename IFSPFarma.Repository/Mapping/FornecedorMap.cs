@@ -17,8 +17,7 @@ namespace IFSPFarma.Repository.Mapping
                 .HasColumnType("varchar(100)");
 
             builder.Property(prop => prop.Cnpj)
-                .IsRequired()
-                .HasColumnType("varchar(100)");
+                .IsRequired();
 
             builder.Property(prop => prop.Razaosocial)
                 .IsRequired()

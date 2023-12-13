@@ -3,6 +3,7 @@ using IFSPFarmacia.Domain.Base;
 using IFSPFarmacia.Domain.Entities;
 using IFSPFarma.Service.Validators;
 using ReaLTaiizor.Controls;
+using IFSPFarma.App.Models;
 
 namespace IFSPFarma.App.Cadastro
 {
@@ -22,13 +23,11 @@ namespace IFSPFarma.App.Cadastro
         private void PreencheObjeto(Fornecedor fornecedor)
         {
             fornecedor.Nome = txtNome.Text;
-            fornecedor.Cnpj = txtCnpj.Text;
+            if (double.TryParse(txtCnpj.Text, out var cnpj))
+            {
+                fornecedor.Cnpj = cnpj;
+            }
             fornecedor.Razaosocial = txtRazaosocial.Text;
-        }
-
-        public FornecedorCadastro()
-        {
-            InitializeComponent();
         }
 
         protected override void Salvar()
@@ -85,7 +84,7 @@ namespace IFSPFarma.App.Cadastro
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             txtCnpj.Text = linha?.Cells["Cnpj"].Value.ToString();
-            txtRazaosocial.Text = linha?.Cells["Razão social"].Value.ToString();
+            txtRazaosocial.Text = linha?.Cells["Razaosocial"].Value.ToString();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)

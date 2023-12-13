@@ -1,5 +1,4 @@
 using ReaLTaiizor.Controls;
-
 using ReaLTaiizor.Forms;
 
 namespace IFSPFarma.App
@@ -161,6 +160,11 @@ namespace IFSPFarma.App
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CadastroBase_Load(object sender, EventArgs e)
         {
 
         }

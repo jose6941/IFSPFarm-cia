@@ -44,7 +44,7 @@ namespace IFSPFarma.App.Cadastro
             cboFarmaceutico.DataSource = _farmaceuticoService.Get<Farmaceutico>().ToList();
 
             cboProdutos.ValueMember = "Id";
-            cboProdutos.DisplayMember = "Nome";
+            cboProdutos.DisplayMember = "Descricao";
             cboProdutos.DataSource = _produtoService.Get<Produto>().ToList();
         }
 
@@ -63,7 +63,7 @@ namespace IFSPFarma.App.Cadastro
 
             if (int.TryParse(cboFarmaceutico.SelectedValue.ToString(), out var idFarmaceutico))
             {
-                var farmaceutico = _clienteService.GetById<Farmaceutico>(idFarmaceutico);
+                var farmaceutico = _farmaceuticoService.GetById<Farmaceutico>(idFarmaceutico);
                 venda.Farmaceutico = farmaceutico;
             }
             venda.TotalVenda = _vendaProduto.Sum(x => x.Total);
@@ -96,7 +96,7 @@ namespace IFSPFarma.App.Cadastro
             {
                 if (IsAlteracao)
                 {
-                    if (int.TryParse(txtTotalvenda.Text, out var id))
+                    if (int.TryParse(txtId.Text, out var id))
                     {
                         var venda = _vendaService.GetById<Venda>(id);
                         PreencheObjeto(venda);
@@ -137,14 +137,12 @@ namespace IFSPFarma.App.Cadastro
             gridConsualta.DataSource = vendas;
             gridConsualta.Columns["IdCliente"]!.Visible = false;
             gridConsualta.Columns["IdFarmaceutico"]!.Visible = false;
-            gridConsualta.Columns["ValorTotal"].DefaultCellStyle.Format = "C2";
-            gridConsualta.Columns["ValorTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             int.TryParse(linha?.Cells["Id"].Value.ToString(), out var id);
-            txtTotalvenda.Text = linha?.Cells["Id"].Value.ToString();
+            txtId.Text = linha?.Cells["Id"].Value.ToString();
             cboCliente.SelectedValue = linha?.Cells["IdCliente"].Value;
             cboFarmaceutico.SelectedValue = linha?.Cells["IdFarmaceutico"].Value;
             txtData.Text = DateTime.TryParse(linha?.Cells["Data"].Value.ToString(), out var dataC)
@@ -185,8 +183,8 @@ namespace IFSPFarma.App.Cadastro
             gridVendas.Columns["IdProduto"].HeaderText = "Id.Produto";
             gridVendas.Columns["ValorUnit"].DefaultCellStyle.Format = "C2";
             gridVendas.Columns["ValorUnit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            gridVendas.Columns["ValorTotal"].DefaultCellStyle.Format = "C2";
-            gridVendas.Columns["ValorTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            gridVendas.Columns["Total"].DefaultCellStyle.Format = "C2";
+            gridVendas.Columns["Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             gridVendas.Columns["Desconto"].DefaultCellStyle.Format = "C2";
             gridVendas.Columns["Desconto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             gridVendas.Columns["Quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -209,12 +207,17 @@ namespace IFSPFarma.App.Cadastro
                     vendaProduto.ValorUnit = valoru;
                 }
 
+                if (float.TryParse(txtDesconto.Text, NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out var desconto))
+                {
+                    vendaProduto.Desconto = desconto;
+                }
+
                 if (int.TryParse(txtQnt.Text, out var qnt))
                 {
                     vendaProduto.Quantidade = qnt;
                 }
 
-                vendaProduto.Total = vendaProduto.Quantidade * vendaProduto.ValorUnit;
+                vendaProduto.Total = (vendaProduto.Quantidade * vendaProduto.ValorUnit) - vendaProduto.Desconto;
 
                 _vendaProduto.Add(vendaProduto);
                 CalculaTotalVenda();
@@ -241,9 +244,10 @@ namespace IFSPFarma.App.Cadastro
         {
             var convVlr = float.TryParse(txtValoru.Text, NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out float valoru);
             var convQtd = int.TryParse(txtQnt.Text, out int qnt);
+            var convDesc = float.TryParse(txtDesconto.Text, NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out float desconto);
             if (convVlr && convQtd)
             {
-                var valorTotal = qnt * valoru;
+                var valorTotal = (qnt * valoru) - desconto;
                 txtTotalvenda.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", valorTotal);
             }
         }
@@ -266,7 +270,22 @@ namespace IFSPFarma.App.Cadastro
 
         private void VendaCadastro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Close();
+
+        }
+
+        private void gridVendas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

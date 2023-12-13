@@ -60,7 +60,6 @@ namespace IFSPFarma.App.Infra
             Services.AddTransient<ClienteCadastro, ClienteCadastro>();
             Services.AddTransient<FarmaceuticoCadastro, FarmaceuticoCadastro>();
             Services.AddTransient<FornecedorCadastro, FornecedorCadastro>();
-            Services.AddTransient<ClienteCadastro, ClienteCadastro>();
             Services.AddTransient<RemedioCadastro, RemedioCadastro>();
             Services.AddTransient<ProdutoCadastro, ProdutoCadastro>();
             Services.AddTransient<VendaCadastro, VendaCadastro>();
@@ -75,8 +74,8 @@ namespace IFSPFarma.App.Infra
                 config.CreateMap<Fornecedor, FornecedorModel>();
                 config.CreateMap<Remedio, RemedioModel>();
                 config.CreateMap<Produto, ProdutoModel>()
-                    .ForMember(d => d.Fornecedor, d => d.MapFrom(x => x.Forn!.Nome))
-                    .ForMember(d => d.IdFornecedor, d => d.MapFrom(x => x.Forn!.Id));
+                    .ForMember(d => d.IdFornecedor, d => d.MapFrom(x => x.Fornecedor!.Id))
+                    .ForMember(d => d.Fornecedor, d => d.MapFrom(x => x.Fornecedor!.Nome));                
                 config.CreateMap<Venda, VendaModel>()
                     .ForMember(d => d.IdCliente, d => d.MapFrom(x => x.Cliente!.Id))
                     .ForMember(d => d.Cliente, d => d.MapFrom(x => x.Cliente!.Nome))
@@ -84,7 +83,7 @@ namespace IFSPFarma.App.Infra
                     .ForMember(d => d.Farmaceutico, d => d.MapFrom(x => x.Farmaceutico!.Nome));
                 
                 config.CreateMap<VendaProduto, VendaProdutoModel>()
-                    .ForMember(d => d.IdVenda, d => d.MapFrom(x => x.Vend!.Id))              
+                    .ForMember(d => d.IdVenda, d => d.MapFrom(x => x.Vend!.Id))
                     .ForMember(d => d.IdProduto, d => d.MapFrom(x => x.Prod!.Id))
                     .ForMember(d => d.Produto, d => d.MapFrom(x => x.Prod!.Descricao));
                 

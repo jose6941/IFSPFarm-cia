@@ -37,26 +37,17 @@ namespace IFSPFarma.App.Cadastro
 
         private void PreencheObjeto(Produto produto)
         {
-            if (double.TryParse(txtValoru.Text, out var valoru))
-            {
-                produto.ValorUnitario = valoru;
-            }
-            if (int.TryParse(txtQnt.Text, out var qnt))
-            {
-                produto.Quantidade = qnt;
-            }
-
             produto.Descricao = txtNome.Text;
 
             if (int.TryParse(cboFornecedor.SelectedValue.ToString(), out var idFornecedor))
             {
                 var fornecedor = _fornecedorService.GetById<Fornecedor>(idFornecedor);
-                produto.Forn = fornecedor;
+                produto.Fornecedor = fornecedor;
             }
             if (int.TryParse(cboTipo.SelectedValue.ToString(), out var idRemedio))
             {
                 var remedio = _remedioService.GetById<Remedio>(idRemedio);
-                produto.Remed = remedio;
+                produto.Remedio = remedio;
             }
         }
 
@@ -86,7 +77,7 @@ namespace IFSPFarma.App.Cadastro
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Farma", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -98,27 +89,23 @@ namespace IFSPFarma.App.Cadastro
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP Farma", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         protected override void CarregaGrid()
         {
-            produtos = _produtoService.Get<ProdutoModel>(new[] { "Fornecedor" }).ToList();
+            var includes = new List<string>() { "Fornecedor", "Remedio" };
+            produtos = _produtoService.Get<ProdutoModel>(includes).ToList();
             gridConsualta.DataSource = produtos;
             gridConsualta.Columns["IdFornecedor"]!.Visible = false;
-
-            produtos = _produtoService.Get<ProdutoModel>(new[] { "Remedio" }).ToList();
-            gridConsualta.DataSource = produtos;
-            gridConsualta.Columns["IdRemedio"]!.Visible = false;
+            gridConsualta.Columns["IdRemedio"]!.Visible = false;       
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtValoru.Text = linha?.Cells["Valor unitário"].Value.ToString();
-            txtQnt.Text = linha?.Cells["Quantidade"].Value.ToString();
-            txtNome.Text = linha?.Cells["Nome"].Value.ToString();
+            txtNome.Text = linha?.Cells["Descricao"].Value.ToString();
             cboFornecedor.SelectedValue = linha?.Cells["IdFornecedor"].Value;
             cboTipo.SelectedValue = linha?.Cells["IdRemedio"].Value;
         }

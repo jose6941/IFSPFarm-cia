@@ -123,12 +123,12 @@ namespace IFSPFarma.App.Cadastro
 
         private void ClienteCadastro_FormClosing(object sender, FormClosingEventArgs e)
         {
-          
+
         }
 
         private void ClienteCadastro_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
+
         }
     }
 }

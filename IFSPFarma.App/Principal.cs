@@ -89,7 +89,10 @@ namespace IFSPFarma.App
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            if (e.CloseReason == CloseReason.ApplicationExitCall)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

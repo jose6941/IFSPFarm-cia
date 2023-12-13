@@ -14,8 +14,8 @@ namespace IFSPFarma.Service.Validators
                 .NotEmpty().WithMessage("Por favor informe o cnpj.")
                 .NotNull().WithMessage("Por favor informe o cnpj.");
             RuleFor(c => c.Razaosocial)
-                .NotEmpty().WithMessage("Por favor informe a razao social.")
-                .NotNull().WithMessage("Por favor informe a razao social.");           
+                .NotEmpty().WithMessage("Por favor informe a razaosocial.")
+                .NotNull().WithMessage("Por favor informe a razaosocial.");           
         }
     }
 }

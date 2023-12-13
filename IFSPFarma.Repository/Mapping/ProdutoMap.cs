@@ -11,13 +11,7 @@ namespace IFSPFarma.Repository.Mapping
             builder.ToTable("Produto");
 
             builder.HasKey(prop => prop.Id);
-
-            builder.Property(prop => prop.Quantidade)
-                .IsRequired();
-
-            builder.Property(prop => prop.ValorUnitario)
-                .IsRequired();                ;
-
+           
             builder.Property(prop => prop.Descricao)
                 .IsRequired()
                 .HasColumnType("varchar(100)");

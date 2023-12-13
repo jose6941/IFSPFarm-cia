@@ -13,20 +13,16 @@ namespace IFSPFarma.Repository.Mapping
             builder.HasKey(prop => prop.Id);
 
             builder.Property(prop => prop.Total)
-                .IsRequired()
-                .HasColumnType("double");
+                .IsRequired();
 
             builder.Property(prop => prop.ValorUnit)
-                .IsRequired()
-                .HasColumnType("double");
+                .IsRequired();
 
             builder.Property(prop => prop.Desconto)
-                .IsRequired()
-                .HasColumnType("double");
+                .IsRequired();
 
             builder.Property(prop => prop.Quantidade)
-                 .IsRequired()
-                 .HasColumnType("integer");
+                 .IsRequired();
 
             builder.HasOne(prop => prop.Vend)
               .WithMany(prop => prop.Produtos)
