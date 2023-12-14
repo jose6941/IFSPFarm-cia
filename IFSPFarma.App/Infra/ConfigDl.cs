@@ -75,7 +75,10 @@ namespace IFSPFarma.App.Infra
                 config.CreateMap<Remedio, RemedioModel>();
                 config.CreateMap<Produto, ProdutoModel>()
                     .ForMember(d => d.IdFornecedor, d => d.MapFrom(x => x.Fornecedor!.Id))
-                    .ForMember(d => d.Fornecedor, d => d.MapFrom(x => x.Fornecedor!.Nome));                
+                    .ForMember(d => d.Fornecedor, d => d.MapFrom(x => x.Fornecedor!.Nome))               
+                    .ForMember(d => d.IdRemedio, d => d.MapFrom(x => x.Remedio!.Id))
+                    .ForMember(d => d.Remedio, d => d.MapFrom(x => x.Remedio!.Nome));
+
                 config.CreateMap<Venda, VendaModel>()
                     .ForMember(d => d.IdCliente, d => d.MapFrom(x => x.Cliente!.Id))
                     .ForMember(d => d.Cliente, d => d.MapFrom(x => x.Cliente!.Nome))

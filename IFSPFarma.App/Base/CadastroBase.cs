@@ -168,5 +168,10 @@ namespace IFSPFarma.App
         {
 
         }
+
+        private void tabPageConsulta_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

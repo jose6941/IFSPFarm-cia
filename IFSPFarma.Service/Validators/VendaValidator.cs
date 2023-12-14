@@ -9,11 +9,7 @@ namespace IFSPFarma.Service.Validators
         {
             RuleFor(c => c.Data)
                 .NotEmpty().WithMessage("Por favor informe a data.")
-                .NotNull().WithMessage("Por favor informe a data.");
-
-            RuleFor(c => c.Data)
-                .NotEmpty().WithMessage("Por favor informe a descriçao.")
-                .NotNull().WithMessage("Por favor informe a descriçao.");
+                .NotNull().WithMessage("Por favor informe a data.");           
         }
     }
 }

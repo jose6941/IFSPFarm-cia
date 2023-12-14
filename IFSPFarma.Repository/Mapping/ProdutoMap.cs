@@ -15,6 +15,9 @@ namespace IFSPFarma.Repository.Mapping
             builder.Property(prop => prop.Descricao)
                 .IsRequired()
                 .HasColumnType("varchar(100)");
+
+            builder.HasOne(prop => prop.Fornecedor);
+            builder.HasOne(prop => prop.Remedio);
         }
     }
 }

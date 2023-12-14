@@ -130,5 +130,10 @@ namespace IFSPFarma.App.Cadastro
         {
 
         }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

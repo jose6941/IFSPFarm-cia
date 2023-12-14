@@ -42,240 +42,240 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            txtNome = new Guna.UI2.WinForms.Guna2TextBox();
-            txtId = new Guna.UI2.WinForms.Guna2TextBox();
-            txtSenha = new Guna.UI2.WinForms.Guna2TextBox();
-            txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            txtLogin = new Guna.UI2.WinForms.Guna2TextBox();
-            tabPage1.SuspendLayout();
-            materialTabControl1.SuspendLayout();
-            guna2GroupBox1.SuspendLayout();
-            SuspendLayout();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNome = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSenha = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtLogin = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tabPage1.SuspendLayout();
+            this.materialTabControl1.SuspendLayout();
+            this.guna2GroupBox1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(guna2GroupBox1);
-            tabPage1.Size = new Size(513, 254);
-            tabPage1.Controls.SetChildIndex(bt, 0);
-            tabPage1.Controls.SetChildIndex(btn, 0);
-            tabPage1.Controls.SetChildIndex(guna2GroupBox1, 0);
+            this.tabPage1.Controls.Add(this.guna2GroupBox1);
+            this.tabPage1.Size = new System.Drawing.Size(513, 254);
+            this.tabPage1.Controls.SetChildIndex(this.bt, 0);
+            this.tabPage1.Controls.SetChildIndex(this.btn, 0);
+            this.tabPage1.Controls.SetChildIndex(this.guna2GroupBox1, 0);
             // 
             // btn
             // 
-            btn.DialogResult = DialogResult.None;
-            btn.DisabledState.BorderColor = Color.DarkGray;
-            btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn.Location = new Point(-339, 55);
-            btn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn.Location = new System.Drawing.Point(-443, -75);
+            this.btn.ShadowDecoration.CustomizableEdges = customizableEdges14;
             // 
             // bt
             // 
-            bt.DialogResult = DialogResult.None;
-            bt.DisabledState.BorderColor = Color.DarkGray;
-            bt.DisabledState.CustomBorderColor = Color.DarkGray;
-            bt.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            bt.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            bt.Location = new Point(-452, 55);
-            bt.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.bt.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bt.Location = new System.Drawing.Point(-556, -75);
+            this.bt.ShadowDecoration.CustomizableEdges = customizableEdges13;
             // 
             // materialTabControl1
             // 
-            materialTabControl1.Size = new Size(521, 282);
+            this.materialTabControl1.Size = new System.Drawing.Size(521, 282);
             // 
             // guna2GroupBox1
             // 
-            guna2GroupBox1.BorderColor = Color.WhiteSmoke;
-            guna2GroupBox1.BorderRadius = 10;
-            guna2GroupBox1.Controls.Add(label5);
-            guna2GroupBox1.Controls.Add(label4);
-            guna2GroupBox1.Controls.Add(label3);
-            guna2GroupBox1.Controls.Add(label2);
-            guna2GroupBox1.Controls.Add(label1);
-            guna2GroupBox1.Controls.Add(txtNome);
-            guna2GroupBox1.Controls.Add(txtId);
-            guna2GroupBox1.Controls.Add(txtSenha);
-            guna2GroupBox1.Controls.Add(txtEmail);
-            guna2GroupBox1.Controls.Add(txtLogin);
-            guna2GroupBox1.CustomBorderColor = Color.Lavender;
-            guna2GroupBox1.CustomizableEdges = customizableEdges11;
-            guna2GroupBox1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2GroupBox1.ForeColor = Color.DarkGray;
-            guna2GroupBox1.Location = new Point(27, 30);
-            guna2GroupBox1.Name = "guna2GroupBox1";
-            guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2GroupBox1.Size = new Size(460, 173);
-            guna2GroupBox1.TabIndex = 15;
-            guna2GroupBox1.Text = "Dados do cliente";
+            this.guna2GroupBox1.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2GroupBox1.BorderRadius = 10;
+            this.guna2GroupBox1.Controls.Add(this.label5);
+            this.guna2GroupBox1.Controls.Add(this.label4);
+            this.guna2GroupBox1.Controls.Add(this.label3);
+            this.guna2GroupBox1.Controls.Add(this.label2);
+            this.guna2GroupBox1.Controls.Add(this.label1);
+            this.guna2GroupBox1.Controls.Add(this.txtNome);
+            this.guna2GroupBox1.Controls.Add(this.txtId);
+            this.guna2GroupBox1.Controls.Add(this.txtSenha);
+            this.guna2GroupBox1.Controls.Add(this.txtEmail);
+            this.guna2GroupBox1.Controls.Add(this.txtLogin);
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Lavender;
+            this.guna2GroupBox1.CustomizableEdges = customizableEdges11;
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.DarkGray;
+            this.guna2GroupBox1.Location = new System.Drawing.Point(27, 30);
+            this.guna2GroupBox1.Name = "guna2GroupBox1";
+            this.guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.guna2GroupBox1.Size = new System.Drawing.Size(460, 173);
+            this.guna2GroupBox1.TabIndex = 15;
+            this.guna2GroupBox1.Text = "Dados do cliente";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(293, 104);
-            label5.Name = "label5";
-            label5.Size = new Size(31, 16);
-            label5.TabIndex = 18;
-            label5.Text = "Id : ";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(293, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 16);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Id : ";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(39, 104);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 16);
-            label4.TabIndex = 17;
-            label4.Text = "Email : ";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(39, 104);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 16);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Email : ";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(293, 56);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 16);
-            label3.TabIndex = 16;
-            label3.Text = "Login : ";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(293, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 16);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Login : ";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(166, 56);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 16);
-            label2.TabIndex = 15;
-            label2.Text = "Senha : ";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(166, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Senha : ";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(39, 56);
-            label1.Name = "label1";
-            label1.Size = new Size(56, 16);
-            label1.TabIndex = 14;
-            label1.Text = "Nome : ";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Nome : ";
             // 
             // txtNome
             // 
-            txtNome.CustomizableEdges = customizableEdges1;
-            txtNome.DefaultText = "";
-            txtNome.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtNome.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtNome.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtNome.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtNome.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNome.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNome.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtNome.Location = new Point(39, 74);
-            txtNome.Name = "txtNome";
-            txtNome.PasswordChar = '\0';
-            txtNome.PlaceholderText = "";
-            txtNome.SelectedText = "";
-            txtNome.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtNome.Size = new Size(121, 27);
-            txtNome.TabIndex = 9;
+            this.txtNome.CustomizableEdges = customizableEdges1;
+            this.txtNome.DefaultText = "";
+            this.txtNome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNome.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNome.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNome.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNome.Location = new System.Drawing.Point(39, 74);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.PasswordChar = '\0';
+            this.txtNome.PlaceholderText = "";
+            this.txtNome.SelectedText = "";
+            this.txtNome.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.txtNome.Size = new System.Drawing.Size(121, 27);
+            this.txtNome.TabIndex = 9;
             // 
             // txtId
             // 
-            txtId.CustomizableEdges = customizableEdges3;
-            txtId.DefaultText = "";
-            txtId.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtId.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtId.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtId.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtId.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtId.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtId.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtId.Location = new Point(293, 122);
-            txtId.Name = "txtId";
-            txtId.PasswordChar = '\0';
-            txtId.PlaceholderText = "";
-            txtId.SelectedText = "";
-            txtId.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtId.Size = new Size(48, 27);
-            txtId.TabIndex = 13;
+            this.txtId.CustomizableEdges = customizableEdges3;
+            this.txtId.DefaultText = "";
+            this.txtId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtId.Location = new System.Drawing.Point(293, 122);
+            this.txtId.Name = "txtId";
+            this.txtId.PasswordChar = '\0';
+            this.txtId.PlaceholderText = "";
+            this.txtId.SelectedText = "";
+            this.txtId.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.txtId.Size = new System.Drawing.Size(48, 27);
+            this.txtId.TabIndex = 13;
             // 
             // txtSenha
             // 
-            txtSenha.CustomizableEdges = customizableEdges5;
-            txtSenha.DefaultText = "";
-            txtSenha.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtSenha.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtSenha.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtSenha.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtSenha.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSenha.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSenha.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtSenha.Location = new Point(166, 74);
-            txtSenha.Name = "txtSenha";
-            txtSenha.PasswordChar = '\0';
-            txtSenha.PlaceholderText = "";
-            txtSenha.SelectedText = "";
-            txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtSenha.Size = new Size(121, 27);
-            txtSenha.TabIndex = 10;
+            this.txtSenha.CustomizableEdges = customizableEdges5;
+            this.txtSenha.DefaultText = "";
+            this.txtSenha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSenha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSenha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSenha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSenha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSenha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSenha.Location = new System.Drawing.Point(166, 74);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.PlaceholderText = "";
+            this.txtSenha.SelectedText = "";
+            this.txtSenha.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.txtSenha.Size = new System.Drawing.Size(121, 27);
+            this.txtSenha.TabIndex = 10;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // txtEmail
             // 
-            txtEmail.CustomizableEdges = customizableEdges7;
-            txtEmail.DefaultText = "";
-            txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEmail.Location = new Point(39, 122);
-            txtEmail.Name = "txtEmail";
-            txtEmail.PasswordChar = '\0';
-            txtEmail.PlaceholderText = "";
-            txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtEmail.Size = new Size(248, 27);
-            txtEmail.TabIndex = 12;
+            this.txtEmail.CustomizableEdges = customizableEdges7;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Location = new System.Drawing.Point(39, 122);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.txtEmail.Size = new System.Drawing.Size(248, 27);
+            this.txtEmail.TabIndex = 12;
             // 
             // txtLogin
             // 
-            txtLogin.CustomizableEdges = customizableEdges9;
-            txtLogin.DefaultText = "";
-            txtLogin.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtLogin.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtLogin.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtLogin.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtLogin.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtLogin.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLogin.Location = new Point(293, 74);
-            txtLogin.Name = "txtLogin";
-            txtLogin.PasswordChar = '\0';
-            txtLogin.PlaceholderText = "";
-            txtLogin.SelectedText = "";
-            txtLogin.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtLogin.Size = new Size(121, 27);
-            txtLogin.TabIndex = 11;
+            this.txtLogin.CustomizableEdges = customizableEdges9;
+            this.txtLogin.DefaultText = "";
+            this.txtLogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLogin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtLogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtLogin.Location = new System.Drawing.Point(293, 74);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.PasswordChar = '\0';
+            this.txtLogin.PlaceholderText = "";
+            this.txtLogin.SelectedText = "";
+            this.txtLogin.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.txtLogin.Size = new System.Drawing.Size(121, 27);
+            this.txtLogin.TabIndex = 11;
             // 
             // ClienteCadastro
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
-            ClientSize = new Size(527, 349);
-            Name = "ClienteCadastro";
-            Text = "Cadastro de cliente";
-            FormClosing += ClienteCadastro_FormClosing;
-            FormClosed += ClienteCadastro_FormClosed;
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            materialTabControl1.ResumeLayout(false);
-            guna2GroupBox1.ResumeLayout(false);
-            guna2GroupBox1.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(527, 349);
+            this.Name = "ClienteCadastro";
+            this.Text = "Cadastro de cliente";
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.materialTabControl1.ResumeLayout(false);
+            this.guna2GroupBox1.ResumeLayout(false);
+            this.guna2GroupBox1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

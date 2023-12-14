@@ -17,9 +17,9 @@ namespace IFSPFarmacia.Domain.Entities
             TotalVenda = totalvenda;
         }
         public DateTime Data { get; set; }       
-        public Cliente Cliente { get; set; }
-        public Farmaceutico Farmaceutico { get; set; }
-        public List<VendaProduto> Produtos { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual Farmaceutico Farmaceutico { get; set; }
+        public virtual List<VendaProduto> Produtos { get; set; }
         public Double TotalVenda { get; set; }
     }
 }

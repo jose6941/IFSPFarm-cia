@@ -24,7 +24,7 @@ namespace IFSPFarma.Repository.Repository
 
         public void Insert(TEntity obj)
         {
-            _mySqlContext.Entry(obj).State = EntityState.Added;
+            //_mySqlContext.Entry(obj).State = EntityState.Added;
             _mySqlContext.Set<TEntity>().Add(obj);
             _mySqlContext.SaveChanges();
         }

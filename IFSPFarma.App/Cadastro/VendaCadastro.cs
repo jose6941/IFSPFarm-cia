@@ -8,20 +8,22 @@ namespace IFSPFarma.App.Cadastro
 {
     public partial class VendaCadastro : CadastroBase
     {
-        private List<VendaProdutoModel> _vendaProduto;
+        private List<VendaProdutoModel
+            > _vendaProduto;
         private readonly IBaseService<Venda> _vendaService;
         private readonly IBaseService<Farmaceutico> _farmaceuticoService;
         private readonly IBaseService<Cliente> _clienteService;
         private readonly IBaseService<Produto> _produtoService;
-
+        
         private List<VendaModel> vendas;
 
         public VendaCadastro(IBaseService<Venda> vendaService,
                              IBaseService<Cliente> clienteService,
                              IBaseService<Produto> produtoService,
-                             IBaseService<Farmaceutico> farmaceuticoService)
-
+                             IBaseService<Farmaceutico> farmaceuticoService
+                             )    
         {
+            
             _vendaService = vendaService;
             _clienteService = clienteService;
             _produtoService = produtoService;
@@ -64,6 +66,8 @@ namespace IFSPFarma.App.Cadastro
             if (int.TryParse(cboFarmaceutico.SelectedValue.ToString(), out var idFarmaceutico))
             {
                 var farmaceutico = _farmaceuticoService.GetById<Farmaceutico>(idFarmaceutico);
+                //new Farmaceutico() { Id= idFarmaceutico };
+
                 venda.Farmaceutico = farmaceutico;
             }
             venda.TotalVenda = _vendaProduto.Sum(x => x.Total);
@@ -75,8 +79,9 @@ namespace IFSPFarma.App.Cadastro
                     Total = p.Total,
                     Desconto = p.Desconto,
                     Quantidade = p.Quantidade,
-                    Vend = _vendaService.GetById<Venda>(p.IdVenda),
-                    Prod = _produtoService.GetById<Produto>(p.IdProduto)
+                    Vend = venda,
+                    Prod = new Produto() { Id= p.IdProduto}
+                    //_produtoService.GetById<Produto>(p.IdProduto)
                 };
 
                 venda.Produtos.Add(produtos);
@@ -171,6 +176,7 @@ namespace IFSPFarma.App.Cadastro
         }
 
         private void CarregaGridItensVenda()
+
         {
             var source = new BindingSource();
             if (_vendaProduto == null)
@@ -178,8 +184,7 @@ namespace IFSPFarma.App.Cadastro
                 _vendaProduto = new List<VendaProdutoModel>();
             }
             source.DataSource = _vendaProduto.ToArray();
-            gridVendas.DataSource = source;
-            gridVendas.Columns["Id"].Visible = false;
+            gridVendas.DataSource = source;           
             gridVendas.Columns["IdProduto"].HeaderText = "Id.Produto";
             gridVendas.Columns["ValorUnit"].DefaultCellStyle.Format = "C2";
             gridVendas.Columns["ValorUnit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -284,6 +289,16 @@ namespace IFSPFarma.App.Cadastro
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridVendas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
         {
 
         }
